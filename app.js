@@ -4,12 +4,6 @@ const bodyParse = require("body-parser");
 const app = express();
 const cors = require("cors");
 
-const rotasNfliberacao = require("./routes/nf_liberacao");
-const rotasManutencao = require("./routes/manutencao");
-const rotasUsuarios = require("./routes/usuarios");
-const rotasChecklist = require("./routes/checklist");
-const rotasFeedback = require("./routes/feedback");
-const rotasLiberacao = require("./routes/liberacao");
 const rotaTeste = require("./routes/teste")
 
 const { request } = require("express");
@@ -21,12 +15,6 @@ app.use(bodyParse.json());
 // // Tratamento do CORS
 app.use(cors());
 
-app.use("/nf_liberacao", rotasNfliberacao);
-app.use("/manutencao", rotasManutencao);
-app.use("/usuarios", rotasUsuarios);
-app.use("/checklist", rotasChecklist);
-app.use("/feedback", rotasFeedback);
-app.use('/liberacao' , rotasLiberacao)
 app.use('/teste' , rotaTeste)
 
 app.use((req, res, next) => {
